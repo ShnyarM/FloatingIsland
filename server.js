@@ -2,6 +2,7 @@
 var express = require("express");
 const cookieParser = require("cookie-parser")
 var app = express();
+//var server = app.listen(16761)
 var server = app.listen(80)
 app.use(express.static("public"));
 //Parse incoming POST requests to make them useable
