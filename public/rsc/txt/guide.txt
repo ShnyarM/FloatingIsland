@@ -1,0 +1,9 @@
+When creating a world, you will be placed on a random world filled with islands
+Gather resources on these islands by destroying them with your left mouse button
+Place gathered blocks with your right mouse button
+See your items in your inventory by pressing E
+Craft new items in the crafting menu by pressing t
+All recipes for which you have sufficient resources will be displayed
+Get access to further recipes by using a crafting table
+At night monsters will come! Gear Up accordingly
+Damage enemies with your left mouse button

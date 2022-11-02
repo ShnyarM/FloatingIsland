@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "My Custom Font";
+  src: url(/rsc/fonts/pixeldown.ttf) format("truetype");
+}
+
+body{
+  margin: 0px;
+  background-image: url("/rsc/images/sky.png");
+}
+
+h1{
+  font-family: "My Custom Font", Verdana, Tahoma;
+  background-color: #2494e0;
+  text-align: center;
+  color:white;
+  -webkit-text-stroke: 2px #414149;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+
+label{
+  font-family: "My Custom Font", Verdana, Tahoma;
+  color:white;
+  -webkit-text-stroke: 2px #414149;
+}
+
+button{
+  font-family: "My Custom Font", Verdana, Tahoma;
+  color:white;
+  -webkit-text-stroke: 2px #414149;
+  background-color: white;
+}
+
+form{
+  margin: 100px auto 30px auto;
+  padding: 100px 50px;
+  max-width: 600px;
+  background-color: #2494e0;
+  width: 500px;
+  border-radius: 50px;
+}
+
+.error{
+  font-family: "My Custom Font", Verdana, Tahoma;
+  color:rgb(255, 103, 103);
+  -webkit-text-stroke: 2px #414149;
+}
+
+.titleImg{
+  width: 70px;
+  height: 70px;
+  vertical-align: sub;
+}
+
+.center{
+  text-align: center;
+}

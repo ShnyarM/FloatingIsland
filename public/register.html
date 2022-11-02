@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="rsc/images/icon.png" type="image/png">
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <title>Register</title>
+  </head>
+  <body>
+    <h1><a href = "/"><img class="titleImg" src="/rsc/images/icon.png"></a>Register</h1>
+    <form class="center">
+      <label>Username:</label><br>
+      <input type="text" id="name" maxlength="15"><br><br>
+      <label>Password:</label><br>
+      <input type="password" id="password"><br><br>
+      <label>Confirm Password:</label><br>
+      <input type="password" id="confirmPassword"><br><br>
+      <button style = "cursor:pointer" type="button" id="button" onclick="register();">Login</button>
+    </form>
+    <p class="center error" id="error"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="rsc/scripts/libs/account.js"></script>
+    <script src="htmlScripts/register.js"></script>
+  </body>
+</html>

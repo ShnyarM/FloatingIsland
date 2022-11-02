@@ -1,0 +1,12 @@
+{
+  "1": {"name": "grass", "drop": 1, "breakSpeed":10, "toolType": 4},
+  "2": {"name": "stone pieces", "noStroke": 1, "translucent":1, "drop": 2, "breakSpeed":2, "toolType": 2, "needsTool":true},
+  "3": {"name": "wood", "drop": 3, "breakSpeed":6, "toolType": 3},
+  "4": {"name": "crafting table", "drop": 6, "breakSpeed":6, "interactable": 1, "toolType": 3},
+  "5": {"name": "branch", "noStroke": 1, "translucent":1, "drop": 7, "breakSpeed":6, "toolType": 3},
+  "6": {"name": "tree trunk", "drop": 7, "breakSpeed":6, "toolType": 3},
+  "7": {"name": "stone", "drop": 2, "breakSpeed":2, "toolType": 2, "needsTool":true},
+  "8": {"name": "iron ore", "noStroke": 1, "translucent":1, "drop": 17, "breakSpeed":1.2, "toolType": 2, "needsTool":true},
+  "9": {"name": "doorLocked", "drop": 18, "breakSpeed":5, "toolType": 3, "interactable":2},
+  "10": {"name": "doorUnlocked", "drop": 18, "breakSpeed":5, "toolType": 3, "noHitbox":true, "interactable":3}
+}

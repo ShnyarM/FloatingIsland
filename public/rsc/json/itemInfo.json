@@ -1,0 +1,22 @@
+{
+  "1": {"name": "grass", "placeable": 1, "stackable": 100},
+  "2": {"name": "stone", "placeable": 7, "stackable": 100},
+  "3": {"name": "wood", "placeable": 3, "stackable": 100, "recipe":[7, 1], "craftAmn":4, "inventoryCraftable": true},
+  "4": {"name": "wood sword", "toolType":1, "damage":4, "durability":50, "recipe":[8, 1, 3, 2]},
+  "5": {"name": "wood pickaxe", "toolType":2, "multiplier":3, "durability":20, "recipe":[8, 2, 3, 3]},
+  "6": {"name": "crafting Table", "placeable":4, "stackable": 100, "recipe":[3, 4], "inventoryCraftable": true},
+  "7": {"name": "tree trunk", "placeable":6, "stackable": 100},
+  "8": {"name": "stick", "stackable": 100, "recipe":[3, 2], "craftAmn":4, "inventoryCraftable": true},
+  "9": {"name": "wood axe", "toolType":3, "multiplier":2, "durability":20, "recipe":[8, 2, 3, 4]},
+  "10": {"name": "wood shovel", "toolType":4, "multiplier":1.6, "durability":20, "recipe":[8, 2, 3, 1]},
+  "11": {"name": "stone shovel", "toolType":4, "multiplier":2, "durability":50, "recipe":[8, 2, 2, 1]},
+  "12": {"name": "stone axe", "toolType":3, "multiplier":2.3, "durability":50, "recipe":[8, 2, 2, 4]},
+  "13": {"name": "stone pickaxe", "toolType":2, "multiplier":4.2, "durability":50, "recipe":[8, 2, 2, 3]},
+  "14": {"name": "iron shovel", "toolType":4, "multiplier":2.5, "durability":100, "recipe":[8, 2, 17, 1]},
+  "15": {"name": "iron axe", "toolType":3, "multiplier":2.8, "durability":100, "recipe":[8, 2, 17, 4]},
+  "16": {"name": "iron pickaxe", "toolType":2, "multiplier":5.3, "durability":100, "recipe":[8, 2, 17, 3]},
+  "17": {"name": "iron ingot", "stackable": 100},
+  "18": {"name": "door", "placeable":9, "stackable": 100, "recipe":[3, 6]},
+  "19": {"name": "stone sword", "toolType":1, "damage":6, "durability":80, "recipe":[8, 1, 2, 2]},
+  "20": {"name": "iron sword", "toolType":1, "damage":8, "durability":200, "recipe":[8, 1, 17, 2]}
+}

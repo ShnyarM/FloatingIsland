@@ -1,0 +1,27 @@
+{
+  "name": "floatingisland",
+  "version": "1.0.0",
+  "description": "Multiplayer-Browser-Game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "socket",
+    "node",
+    "Multiplayer",
+    "Browser"
+  ],
+  "homepage": "https://floatingisland.ch",
+  "bugs":{
+    "email": "shnyar@hotmail.ch"
+  },
+  "author": "Shnyar Muhamad",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.2",
+    "fs-extra": "^10.1.0",
+    "socket.io": "^4.4.1"
+  }
+}

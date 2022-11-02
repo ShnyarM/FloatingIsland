@@ -1,0 +1,17 @@
+{
+  "name": "",
+  "x": 0,
+  "y": 0,
+  "width": 0.9,
+  "height": 0.9,
+  "alive": true,
+  "falling": false,
+  "itemSelected": 1,
+  "direction": true,
+  "spawnX":0,
+  "spawnY":0,
+  "toolBarSelected":0,
+  "toolBar": [{"id":1, "amn":100}, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "inventory": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "health": 20
+}
