@@ -1,6 +1,6 @@
 function socketSetup(){
   //socket = io.connect("http://localhost:16761/")
-  socket = io.connect("http://floatingisland.ch/")
+  socket = io.connect("https://floatingisland.ch/", {secure: true})
 
   socket.on("dataRequest", () => {
     if(loggedIn != null) socket.emit("name", {name: username, loggedIn: loggedIn, id: getCookie("id")}) //Tell name to server

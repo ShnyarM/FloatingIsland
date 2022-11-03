@@ -15,7 +15,7 @@ fs.readFile("public/rsc/json/playerLayout.json", "utf8", (err, data) => {
 
 class World{
   constructor(socket, id, host, io, createNew=false, seed=0, name="", save=true){
-    this.path = save ? "worlds/" + host + "/" + id + "/" : "worlds/§noUser/" + id + "/"
+    this.path = save ? "worlds/" + host + "/" + id + "/" : "worlds/Player/" + id + "/"
     this.save = save
     this.room = parseInt(id)
     this.host = host
