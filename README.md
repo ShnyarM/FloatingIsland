@@ -1,4 +1,5 @@
 Maturaarbeit-Projekt für den Abschluss an der Kantonsschule Solothurn
+Spielbar unter https://floatingisland.ch/
 
 Um selber einen lokalen Server für Floating Island zu hosten, müssen folgende Schritte befolgt werden:
 
