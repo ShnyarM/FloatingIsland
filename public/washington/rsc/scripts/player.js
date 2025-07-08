@@ -219,7 +219,7 @@ class Player{
     this.yVelocity = 0;
     hurtSound.play();
 
-    if(this.score > highscore){
+    if(this.score > getHighScore()){
       newHighScore(this.score)
     }
   }

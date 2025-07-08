@@ -10,8 +10,9 @@ let godmode = false
 let friends = [], friendsStatus = {} //Array of friends and their activitystatus
 let timer = 0;
 let catMode = false;
+let easyMode = false;
 let playerHurt = false;
-let highscore = 0;
+let highscore = 0, easyHighscore = 0;
 
 function setup() {
   canvas = createCanvas(1, 1)
@@ -27,8 +28,12 @@ function setup() {
   for(let i = 0; i < fps; i++) lastFrames.push(0)
   
   preloadSetup();
+
   highscore = localStorage.getItem("highscore")
   if(highscore === null) highscore = 0;
+
+  easyHighscore = localStorage.getItem("easyHighscore")
+  if(easyHighscore === null) easyHighscore = 0;
 }
 
 function draw() {
@@ -60,13 +65,23 @@ function startGame(){
 
 function leaveGame(){
   gameState = 0;
+  menuState = 0;
   song.stop()
   playerHurt = false;
 }
 
 function newHighScore(newScore){
-  highscore = newScore;
-  localStorage.setItem("highscore", newScore);
+  if(!easyMode){
+    highscore = newScore;
+    localStorage.setItem("highscore", newScore);
+  }else{
+    easyHighscore = newScore;
+    localStorage.setItem("easyHighscore", newScore)
+  }
+}
+
+function getHighScore(){
+  return easyMode ? easyHighscore : highscore;
 }
 
 //Checks if mouse was clicked in that frame
