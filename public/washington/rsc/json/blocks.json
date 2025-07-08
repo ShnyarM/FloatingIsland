@@ -1,0 +1,21 @@
+{
+  "0": {"name": "grass and dirt", "collision": true, "lethal": false, "customHitbox":false, "individualBlocks": true},
+  "1": {"name": "grass", "collision": true, "lethal": false, "customHitbox":false, "individualBlocks": true},
+  "2": {"name": "dirt", "collision": true, "lethal": false, "customHitbox":false, "individualBlocks": true},
+  "3": {"name": "spike", "collision": true, "lethal": true, "customHitbox":true, "individualBlocks": true, "xHitbox":0.3, "yHitbox":0.5, "widthHitbox":0.4, "heightHitbox":0.5},
+  "4": {"name": "cake", "collision": false, "lethal": false, "customHitbox":false, "individualBlocks": false},
+  "5": {"name": "stone", "collision": true, "lethal": false, "customHitbox":false, "individualBlocks": true},
+  "6": {"name": "simple spike", "collision": true, "lethal": true, "customHitbox":false, "individualBlocks": true},
+  "7": {"name": "spike rotated", "collision": true, "lethal": true, "customHitbox":true, "individualBlocks": true, "xHitbox":0.3, "yHitbox":0, "widthHitbox":0.4, "heightHitbox":0.5},
+  "8": {"name": "simple spike rotated", "collision": true, "lethal": true, "customHitbox":false, "individualBlocks": true},
+  "9": {"name": "brown stone", "collision": true, "lethal": false, "customHitbox":false, "individualBlocks": true},
+  "10": {"name": "palm", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "11": {"name": "tall tree", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "12": {"name": "big bush", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "13": {"name": "small bush", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "14": {"name": "sign", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "15": {"name": "bottle", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "16": {"name": "pumpkin", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "17": {"name": "shroom", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false},
+  "18": {"name": "flower bush", "collision": false, "lethal": false, "customHitbox": false, "individualBlocks": false}
+}
