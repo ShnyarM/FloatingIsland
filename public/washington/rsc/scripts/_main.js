@@ -9,10 +9,10 @@ let mouseClick = false, mouseClickUpdated = false //says if mouse was pressed in
 let godmode = false
 let friends = [], friendsStatus = {} //Array of friends and their activitystatus
 let timer = 0;
-let catMode = false;
 let easyMode = false;
 let playerHurt = false;
 let highscore = 0, easyHighscore = 0;
+let song;
 
 function setup() {
   canvas = createCanvas(1, 1)
@@ -61,6 +61,12 @@ function startGame(){
   playerSetup();
   cameraSetup();
   mapSetup();
+
+  if(get_current_character() == CHARACTER_ENUM.HORNET){
+    song = choral_chambers;
+  }else{
+    song = main_theme;
+  }
 }
 
 function leaveGame(){

@@ -19,7 +19,7 @@ function menuDraw(){
 
 function drawMainMenu(){
   imageMode(CENTER)
-  image(catMode ? catSleeping : racoonSleeping, width*0.75, height*0.4, height/2, height/2)
+  image(get_character_sprite(SPRITE_TYPES.SLEEPING), width*0.75, height*0.4, height/2, height/2)
   imageMode(CORNER)
 
   textSize(height/20)
@@ -28,15 +28,13 @@ function drawMainMenu(){
   buttonRect(width/8, height*0.45, 0.2*width, 0.1*height, "How to play", height/40, () => {menuState = 2})
 
   textSize(height/50)
-  text("Help " + (catMode ? "Tabsy" : "Washington") + " collect pieces\n\nof cake on " + (catMode ? "her" : "his") + " birthday", width*0.75, height*0.7)
+  text("Help " + get_current_character_name() + " collect pieces\n\nof cake on their birthday", width*0.75, height*0.7)
 
   text("Easy Mode Highscore: " + easyHighscore, width*0.75, height*0.85)
   text("Normal Mode Highscore: " + highscore, width*0.75, height*0.91)
 
-  if(highscore >= 50){
-    buttonRect(width*0.75, height*0.5, height/2, height/4, "", height/40, () => {
-      catMode = !catMode
-    }, {colHigh: color(0, 0, 0, 0)})
+  if(highscore >= 50 || easyHighscore >= 50){
+    buttonRect(width*0.75, height*0.5, height/2, height/4, "", height/40, cycle_character, {colHigh: color(0, 0, 0, 0)})
   }
 }
 
@@ -77,7 +75,7 @@ function endScreen(){
 
   fill("white")
   textSize(height/30)
-  text((catMode ? "Tabsy" : "Washington") + " has been hurt!", width/2, height*0.1)
+  text(get_current_character_name() + " has been hurt!", width/2, height*0.1)
 
   textSize(height/50)
   text("Score: " + player.score, width/2, height*0.4)

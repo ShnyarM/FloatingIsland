@@ -2,8 +2,23 @@
 var express = require("express");
 const cookieParser = require("cookie-parser")
 var app = express();
-//var server = app.listen(16761)
-var server = app.listen(80)
+
+// Check command line arg to see if it should run locally 
+var runLocally = false;
+for(let i = 0; i < process.argv.length; i++){
+  if(process.argv[i] == "local"){
+    runLocally = true;
+  }
+}
+
+var server;
+if(runLocally){
+  server = app.listen(16761);
+  console.log("Running server locally");
+}else{
+  server = app.listen(80)
+} 
+
 app.use(express.static("public"));
 //Parse incoming POST requests to make them useable
 app.use(express.json());

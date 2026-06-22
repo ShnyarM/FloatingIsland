@@ -35,13 +35,20 @@ class Player{
 
     this.collCorrection = 0.00001 //Add when colliding to prevent bugs where game thinks its inside block
 
+    // sprites 
+    this.idleSprites = get_character_sprite(SPRITE_TYPES.IDLE_LIST);
+    this.idleSpritesAmount = this.idleSprites.length;
+    this.runningSprites = get_character_sprite(SPRITE_TYPES.RUNNING_LIST);
+    this.runningSpritesAmount = this.runningSprites.length;
+    this.inAirSprite = get_character_sprite(SPRITE_TYPES.IN_AIR);
+    this.dashSprite = get_character_sprite(SPRITE_TYPES.DASH);
+
     // timers for animations
     this.runningTimer = 0;
     this.runningAnimationSpeed = 23;
     this.idleTimer = 0;
     this.idleAnimationSpeed = 3;
 
-    this.cat = catMode;
     this.score = 0;
     this.hurt = false;
 
@@ -50,18 +57,10 @@ class Player{
   }
 
   draw(){
-    let imageToDraw;
-    if(!this.cat){
-      imageToDraw = racoonIdle[floor(this.idleTimer) % 8];
-      if(this.xVelocity != 0) imageToDraw = racoonRunning[floor(this.runningTimer) % 8]
-      if(!this.onGround) imageToDraw = racoonInAir;
-      if(this.dashed) imageToDraw = racoonDash;
-    }else{
-      imageToDraw = catIdle[floor(this.idleTimer) % 16];
-      if(this.xVelocity != 0) imageToDraw = catRunning[floor(this.runningTimer) % 8]
-      if(!this.onGround) imageToDraw = catInAir;
-      if(this.dashed) imageToDraw = catDash;
-    }
+    let imageToDraw = this.idleSprites[floor(this.idleTimer) % this.idleSpritesAmount];
+    if(this.xVelocity != 0) imageToDraw = this.runningSprites[floor(this.runningTimer) % this.runningSpritesAmount]
+    if(!this.onGround) imageToDraw = this.inAirSprite;
+    if(this.dashed) imageToDraw = this.dashSprite;
 
     unitImage(imageToDraw, player.x-0.5*this.drawExpansion, player.y+this.drawExpansion, player.width+this.drawExpansion, player.height+this.drawExpansion, this.direction != 1);
     noFill();
@@ -87,7 +86,11 @@ class Player{
     
     // dash
     if(keyIsDown(16) && !this.dashed && !this.onGround && this.dashTimer <= 0){
-      dashSound.play()
+      if(get_current_character() == CHARACTER_ENUM.HORNET){
+        shawSound.play();
+      }else{
+        dashSound.play()
+      }
       this.dashed = true;
       this.dashTimer = this.dashRecharge;
 
