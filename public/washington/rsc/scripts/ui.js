@@ -1,17 +1,23 @@
-let menuState = 0;
+const MenuStates = {
+  MAIN: 0,
+  DIFFICULTY_SELECT: 1,
+  HOW_TO_PLAY: 2,
+}
+
+let menuState = MenuStates.MAIN;
 
 function menuDraw(){
   image(menuBg, 0, 0, width, height)
   image(vignette, 0, 0, width, height)  
 
   switch(menuState){
-    case 0:
+    case MenuStates.MAIN:
       drawMainMenu();
       break;
-    case 1:
+    case MenuStates.DIFFICULTY_SELECT:
       drawDifficultySelect();
       break;
-    case 2:
+    case MenuStates.HOW_TO_PLAY:
       drawHowToPlay();
       break;
   }
@@ -24,8 +30,9 @@ function drawMainMenu(){
 
   textSize(height/20)
   text("Washingtons birthday", width/2, height*0.1)
-  buttonRect(width/8, height*0.35, 0.2*width, 0.1*height, "Start", height/40, () => {menuState = 1})
-  buttonRect(width/8, height*0.45, 0.2*width, 0.1*height, "How to play", height/40, () => {menuState = 2})
+  buttonRect(width/8, height*0.35, 0.2*width, 0.1*height, "Start", height/40, () => {menuState = MenuStates.DIFFICULTY_SELECT})
+  buttonRect(width/8, height*0.45, 0.2*width, 0.1*height, "How to play", height/40, () => {menuState = MenuStates.HOW_TO_PLAY})
+  buttonRect(width/8, height*0.55, 0.2*width, 0.1*height, "Editor", height/40, () => {menuState = 2})
 
   textSize(height/50)
   text("Help " + get_current_character_name() + " collect pieces\n\nof cake on their birthday", width*0.75, height*0.7)
@@ -45,7 +52,7 @@ function drawDifficultySelect(){
   buttonRect(width/2, height*0.5, 0.2*width, 0.1*height, "Easy", height/40, () => {easyMode = true; startGame()})
   buttonRect(width/2, height*0.65, 0.2*width, 0.1*height, "Normal", height/40, () => {easyMode = false; startGame()})
 
-  buttonRect(width*0.06, height*0.05, 0.1*width, 0.075*height, "Back", height/60, () => {menuState = 0})
+  buttonRect(width*0.06, height*0.05, 0.1*width, 0.075*height, "Back", height/60, () => {menuState = MenuStates.MAIN})
 }
 
 function drawHowToPlay(){
@@ -55,7 +62,7 @@ function drawHowToPlay(){
   textSize(height/50)
   text("Use WASD to move\n\nPress Space to jump\n\n\n\nPress shift while in the air to dash\n\nUse WASD to control the direction of the dash\n\n\n\nCollect as many cakes as possible", width/2, height*0.5)
 
-  buttonRect(width*0.06, height*0.05, 0.1*width, 0.075*height, "Back", height/60, () => {menuState = 0})
+  buttonRect(width*0.06, height*0.05, 0.1*width, 0.075*height, "Back", height/60, () => {menuState = MenuStates.MAIN})
 }
 
 function gameUI(){

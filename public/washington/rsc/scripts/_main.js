@@ -1,10 +1,15 @@
+const GameStates = {
+  MENU: 0,
+  ENDLESS: 1,  
+}
+
 let canvas;
 let u, uwidth, uheight, zoom = 15; //Units are used instead of pixels, so there are no problems with different resolutions
 let sdeltaTime
 let blockRes = 16
 let debug = false
 let lastFrames = [], fps = 120
-let gameState = 0; //Which state the game is in, 0 = main menu, 1 = in-game
+let gameState = GameStates.MENU; 
 let mouseClick = false, mouseClickUpdated = false //says if mouse was pressed in that frame, updated is used to make it possible
 let godmode = false
 let friends = [], friendsStatus = {} //Array of friends and their activitystatus
@@ -13,6 +18,7 @@ let easyMode = false;
 let playerHurt = false;
 let highscore = 0, easyHighscore = 0;
 let song;
+
 
 function setup() {
   canvas = createCanvas(1, 1)
@@ -41,7 +47,8 @@ function draw() {
   timer+=sdeltaTime
   updateMouseClicked()
   background("#1b71c3")
-  if(gameState == 0){
+  console.log(gameState)
+  if(gameState == GameStates.MENU){
     menuDraw()
   }else{
     if(!song.isPlaying()) song.play();
@@ -55,7 +62,7 @@ function draw() {
 }
 
 function startGame(){
-  gameState = 1;
+  gameState = GameStates.ENDLESS;
   timer = 0;
   playerHurt = false;
   playerSetup();
@@ -70,8 +77,8 @@ function startGame(){
 }
 
 function leaveGame(){
-  gameState = 0;
-  menuState = 0;
+  gameState = GameStates.MENU;
+  menuState = MenuStates.MAIN;
   song.stop()
   playerHurt = false;
 }
@@ -120,7 +127,7 @@ function drawFramerate(){
 }
 
 function keyPressed(){
-  if(gameState==1){
+  if(gameState==GameStates.ENDLESS){
     switch(keyCode){
       case 90: //z
         if(!debug) return
@@ -129,7 +136,7 @@ function keyPressed(){
         RENDER_STRUCTURE_LINES = !RENDER_STRUCTURE_LINES;
         break;
       case 32: //space
-        if(gameState == 1 && playerHurt) startGame();
+        if(gameState == GameStates.ENDLESS && playerHurt) startGame();
         break;
     }
   }
