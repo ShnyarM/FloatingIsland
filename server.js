@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 //Start express server
 var express = require("express");
 const cookieParser = require("cookie-parser")
@@ -6,14 +8,14 @@ var app = express();
 // Check command line arg to see if it should run locally 
 var runLocally = false;
 for(let i = 0; i < process.argv.length; i++){
-  if(process.argv[i] == "local"){
+  if(process.argv[i] == "--local"){
     runLocally = true;
   }
 }
 
 var server;
 if(runLocally){
-  server = app.listen(16761);
+  server = app.listen(16762, "127.0.0.1");
   console.log("Running server locally");
 }else{
   server = app.listen(80)
@@ -238,7 +240,7 @@ app.post("/req/register", (req, res) => {
   userObject.username = postData[0] //Assign values from post Data
   userObject.password = postData[1]
 
-  const randNumb = Math.floor(Math.random()*1000000000); //Get random number for id
+  const randNumb = crypto.randomInt(1000000000); //Get random number for id
   userObject.id = randNumb
 
   saveUserData(postData[0], userObject) //Save Data to json file

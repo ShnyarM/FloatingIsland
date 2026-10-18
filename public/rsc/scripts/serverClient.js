@@ -1,6 +1,12 @@
 function socketSetup(){
-  //socket = io.connect("http://localhost:16761/")
-  socket = io.connect("https://floatingisland.ch/", {secure: true})
+  // Check if the current page is being loaded locally
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+  if (isLocal) {
+    socket = io.connect("http://localhost:16762/");
+  } else {
+    socket = io.connect("https://floatingisland.ch/", { secure: true });
+  }
 
   socket.on("dataRequest", () => {
     if(loggedIn != null) socket.emit("name", {name: username, loggedIn: loggedIn, id: getCookie("id")}) //Tell name to server
