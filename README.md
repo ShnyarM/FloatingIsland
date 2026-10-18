@@ -1,10 +1,30 @@
-Maturaarbeit-Projekt für den Abschluss an der Kantonsschule Solothurn
+# Floating Island
 
-Spielbar unter https://floatingisland.ch/
+Floating Island, a multiplayer browser-game with randomly generated worlds. Created as my Matura Thesis.
 
-Um selber einen lokalen Server für Floating Island zu hosten, müssen folgende Schritte befolgt werden:
+This repo contains both the back-end server and the front-end game. A public server instance exists, and can be accessed at https://floatingisland.ch.
 
-1. Unter "server.js" müssen die "//" bei Zeile 5 entfernt werden und Zeile 6 muss auskommentiert werden.
-2. Unter "public\rsc\scripts\serverClient.js" müssen die "//" bei Zeile 2 entfernt werden und Zeile 3 musst auskommentiert werden.
-3. Um den Server zu starten, muss mit dem Befehl "node server.js" die Datei "server.js" gestartet werden. (Node.js muss installiert sein)
-4. Das Spiel sollte nun unter der Domain "http://localhost:16761/" lokal spielbar sein.
+Features:
+- Persistent, modifiable worlds
+- Multiplayer with friends
+- Account system, Friend system
+
+## Images
+
+![World](images/world.png)
+
+![Crafting](images/crafting.png)
+
+## Running a server
+
+A server can be started by running:
+
+```node server```
+
+This will create a public server on the port 80.
+
+Additionally, a local server can be started using:
+
+```node server --local```
+
+This server will be accessible at the address http://localhost:16762
